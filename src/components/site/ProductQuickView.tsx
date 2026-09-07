@@ -163,16 +163,23 @@ export function ProductQuickView({
               <p className="mt-3 text-sm text-muted-foreground">{item.description}</p>
             ) : null}
 
-            <div className="mt-5 flex flex-col divide-y divide-border rounded-2xl border border-border sm:flex-row sm:divide-x sm:divide-y-0">
-              {SIZE_OPTIONS.map(({ label, dims }) => (
+            <div className="mt-5 flex rounded-2xl border border-border">
+              {SIZE_OPTIONS.map(({ label, dims }, i) => (
                 <div
                   key={label}
-                  className="flex flex-1 items-center justify-center py-4 text-center"
+                  className={`flex flex-1 flex-col items-center justify-center py-5 text-center ${
+                    i !== SIZE_OPTIONS.length - 1 ? "border-r border-border" : ""
+                  }`}
                 >
-                  <p className="text-sm">
-                    <span className="font-medium text-foreground">{label}</span>{" "}
-                    <span className="text-muted-foreground">— {dims}</span>
-                  </p>
+                  <span className="rounded-full bg-terracotta px-4 py-1 text-xs font-semibold uppercase tracking-wider text-primary-foreground">
+                    {label}
+                  </span>
+                  <span className="mt-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                    Size:
+                  </span>
+                  <span className="text-sm font-medium text-foreground">
+                    {dims}
+                  </span>
                 </div>
               ))}
             </div>
