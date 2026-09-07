@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, ShoppingBag } from "lucide-react";
 import { digits, LOGO_SRC, type Service, type SiteSettings } from "@/lib/site-data";
 
 type IconProps = { className?: string };
