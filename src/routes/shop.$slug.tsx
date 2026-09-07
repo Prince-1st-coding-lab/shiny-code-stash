@@ -79,6 +79,7 @@ function ProductPage() {
         available: c.available,
         slug: c.slug,
         images: [c.image_url, ...(c.gallery ?? [])].filter(Boolean),
+        category: product.name,
       }));
     }
     const gallery = [product.image_url, ...(product.gallery ?? [])].filter(Boolean);
@@ -92,6 +93,7 @@ function ProductPage() {
       available: product.available,
       slug: null,
       images: [src],
+      category: product.name,
     }));
   }, [product, products]);
 
