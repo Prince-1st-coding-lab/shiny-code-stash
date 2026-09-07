@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, ShoppingBag } from "lucide-react";
 import { digits, LOGO_SRC, type Service, type SiteSettings } from "@/lib/site-data";
 
 type IconProps = { className?: string };
@@ -102,16 +102,18 @@ export function SiteFooter({
               {services.map((s) => (
                 <li key={s.id}>
                   <Link
-                    className="hover:text-foreground"
+                    className="inline-flex items-center gap-2 hover:text-foreground"
                     to="/services/$slug"
                     params={{ slug: s.slug }}
                   >
+                    <ArrowRight className="h-4 w-4 shrink-0 text-leaf" />
                     {s.name}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link className="hover:text-foreground" to="/shop">
+                <Link className="inline-flex items-center gap-2 hover:text-foreground" to="/shop">
+                  <ShoppingBag className="h-4 w-4 shrink-0 text-leaf" />
                   Shop
                 </Link>
               </li>
@@ -121,19 +123,27 @@ export function SiteFooter({
             <p className="font-medium text-foreground">Contact</p>
             <ul className="mt-3 space-y-2 text-muted-foreground">
               <li>
-                <a className="hover:text-foreground" href={`tel:+${digits(settings.phone)}`}>
+                <a
+                  className="inline-flex items-center gap-2 hover:text-foreground"
+                  href={`tel:+${digits(settings.phone)}`}
+                >
+                  <Phone className="h-4 w-4 shrink-0 text-leaf" />
                   {settings.phone}
                 </a>
               </li>
               <li>
                 <a
-                  className="break-all hover:text-foreground"
+                  className="inline-flex items-start gap-2 break-all hover:text-foreground"
                   href={`mailto:${settings.email}`}
                 >
+                  <Mail className="h-4 w-4 shrink-0 pt-0.5 text-leaf" />
                   {settings.email}
                 </a>
               </li>
-              <li>{settings.location_text}</li>
+              <li className="inline-flex items-start gap-2">
+                <MapPin className="h-4 w-4 shrink-0 pt-0.5 text-leaf" />
+                {settings.location_text}
+              </li>
             </ul>
           </div>
         </div>
