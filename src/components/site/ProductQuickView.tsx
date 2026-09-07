@@ -15,6 +15,7 @@ export type QuickViewItem = {
   available?: boolean | null;
   images: string[];
   slug?: string | null;
+  category?: string | null;
 };
 
 const SIZE_OPTIONS = [

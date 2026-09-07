@@ -132,6 +132,7 @@ function ShopPage() {
                       available: p.available,
                       slug: p.slug,
                       images: [p.image_url, ...(p.gallery ?? [])].filter(Boolean),
+                      category: p.name,
                     })
                   }
                   className="block w-full"
