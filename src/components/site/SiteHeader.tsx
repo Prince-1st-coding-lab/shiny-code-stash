@@ -4,7 +4,7 @@ import { LOGO_SRC, type SiteSettings } from "@/lib/site-data";
 export function SiteHeader({ settings }: { settings: SiteSettings }) {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-1.5">
         <Link
           to="/"
           className="flex min-w-0 flex-row items-center gap-3"
@@ -14,8 +14,9 @@ export function SiteHeader({ settings }: { settings: SiteSettings }) {
             alt="G Modern Creativity Ltd logo"
             width={160}
             height={80}
-            className="h-auto w-28 max-w-full object-contain sm:w-36"
+            className="h-[104px] w-auto max-w-[45%] shrink-0 object-contain"
           />
+
 
           <span className="flex min-w-0 flex-col justify-center self-center leading-tight">
             <span className="block font-display text-sm font-semibold tracking-tight text-foreground sm:text-base">
